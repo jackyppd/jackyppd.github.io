@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery</title>
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Food Delivery</h1>
+    <input type="text" placeholder="Search your menu...">
+    <button id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</button>
+  </header>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h2>Top of Week</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="images/salad.jpg.webp" alt="Salad">
+        <h3>Squid Sweet & Sour Salad</h3>
+        <p>$10.99</p>
+        <button onclick="addToCart('Squid Sweet & Sour Salad', 10.99)">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/sashimi.jpg.png" alt="Sashimi">
+        <h3>Japan Hainanese Sashimi</h3>
+        <p>$39.99</p>
+        <button onclick="addToCart('Japan Hainanese Sashimi', 39.99)">Add to Cart</button>
+      </div>
+      <div class="menu-item">
+        <img src="images/beef.jpg.jpg" alt="Beef">
+        <h3>Black Pepper Beef Lumpia</h3>
+        <p>$27.12</p>
+        <button onclick="addToCart('Black Pepper Beef Lumpia', 27.12)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal">
+    <div class="modal-content">
+      <h2>My Cart</h2>
+      <ul id="cartItems"></ul>
+      <p>Total: $<span id="totalPrice">0.00</span></p>
+      <button onclick="placeOrder()">Place Order</button>
+      <button onclick="closeCart()">Close</button>
+    </div>
+  </div>
+
+  <!-- Thank You Page -->
+  <div id="thankYou" class="modal">
+    <div class="modal-content">
+      <h2>✅ Thank You!</h2>
+      <p>We received your order.</p>
+      <button onclick="closeThankYou()">Back to Home</button>
+    </div>
+  </div>
+
+  <script src="jsp/index.js"></script>
+</body>
+</html>
+
